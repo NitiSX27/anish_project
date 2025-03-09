@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mango Cultivators Hub</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#weather">Weather</a></li>
+        <li><a href="#guide">Cultivation Guide</a></li>
+        <li><a href="#leaf-detection">Leaf Detection</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="container">
+      <h1>Mango Cultivators Hub</h1>
+      <p>Your one-stop resource for successful mango farming</p>
+    </div>
+  </header>
+
+  <section id="weather">
+    <div class="container">
+      <h2>Weather Status</h2>
+      <form id="weatherForm">
+        <input type="text" id="cityInput" placeholder="Enter your city" required>
+        <button type="submit" class="btn">Get Weather</button>
+      </form>
+      <div class="weather-status" id="weatherCards">
+        <p>Loading weather data...</p>
+      </div>
+      <p>Data from <a href="https://www.weatherapi.com" target="_blank">Weather API</a>.</p>
+    </div>
+  </section>
+
+  <!-- Cultivation Guide Section -->
+<section id="guide">
+  <div class="container">
+    <h2>Cultivation Guide</h2>
+    <p>Master mango farming with these detailed steps:</p>
+    <div class="guide-content">
+      <h3>1. Site Selection and Preparation</h3>
+      <p><strong>Climate:</strong> Mangoes thrive in tropical and subtropical climates with distinct dry and wet seasons. Ideal temperature range is 24-30°C.</p>
+      <p><strong>Soil:</strong> Well-drained, deep loamy soil with pH 5.5-7.5 is optimal. Avoid waterlogged areas.</p>
+      <p><strong>Land Preparation:</strong> Clear the land of weeds and debris. Dig pits of 1m × 1m × 1m size at a spacing of 10m × 10m for traditional varieties and 5m × 5m for high-density planting.</p>
+      <p><strong>Pit Filling:</strong> Fill pits with a mixture of topsoil, farmyard manure (20-25 kg), and 2 kg single super phosphate. Allow to settle for 2-3 weeks before planting.</p>
+
+      <h3>2. Planting and Varieties</h3>
+      <p><strong>Planting Season:</strong> June-July or February-March are ideal planting times in Maharashtra.</p>
+      <p><strong>Planting Method:</strong> Place the sapling in the center of the pit, ensuring the graft joint is above ground level. Firm the soil around the plant and water immediately.</p>
+      <p><strong>Recommended Varieties for Maharashtra:</strong></p>
+      <ul>
+        <li><strong>Alphonso (Hapus):</strong> Premium variety with excellent flavor and aroma.</li>
+        <li><strong>Kesar:</strong> Known for its saffron-colored pulp and sweet taste.</li>
+        <li><strong>Ratna:</strong> Early-maturing hybrid with good yield.</li>
+        <li><strong>Pairi:</strong> Good for table and processing purposes.</li>
+        <li><strong>Totapuri:</strong> Suitable for processing, high-yielding.</li>
+      </ul>
+
+      <h3>3. Irrigation and Nutrition</h3>
+      <p><strong>Irrigation Schedule:</strong></p>
+      <ul>
+        <li><strong>Young trees (1-3 years):</strong> Water every 7-10 days.</li>
+        <li><strong>Bearing trees:</strong> Critical irrigation periods are flowering, fruit set, and fruit development.</li>
+        <li>Water stress during 2-3 months before flowering induces better flowering.</li>
+      </ul>
+      <p><strong>Fertilizer Application:</strong></p>
+      <ul>
+        <li><strong>1st year:</strong> 500g N, 250g P, 250g K per tree.</li>
+        <li><strong>2nd year:</strong> 1000g N, 500g P, 500g K per tree.</li>
+        <li><strong>3rd year onwards:</strong> Increase by 500g N, 250g P, 250g K annually until 10th year.</li>
+      </ul>
+      <p>Apply in two splits: June-July and October-November.</p>
+      <p><strong>Micronutrients:</strong> Foliar spray of zinc sulfate (0.5%) and manganese sulfate (0.5%) during new flush emergence helps correct deficiencies.</p>
+
+      <h3>4. Pest and Disease Management</h3>
+      <p><strong>Common Pests:</strong></p>
+      <ul>
+        <li><strong>Mango Hopper:</strong> Spray imidacloprid (0.3 ml/L) or thiamethoxam (0.2 g/L) at flowering stage.</li>
+        <li><strong>Fruit Fly:</strong> Install pheromone traps (5/ha) and bag fruits at marble stage.</li>
+        <li><strong>Mealy Bug:</strong> Apply chlorpyriphos (2 ml/L) on tree trunk.</li>
+      </ul>
+      <p><strong>Major Diseases:</strong></p>
+      <ul>
+        <li><strong>Powdery Mildew:</strong> Spray wettable sulfur (2g/L) or dinocap (1 ml/L).</li>
+        <li><strong>Anthracnose:</strong> Apply carbendazim (1g/L) or copper oxychloride (3g/L).</li>
+        <li><strong>Die Back:</strong> Prune affected parts and apply copper oxychloride paste on cut ends.</li>
+      </ul>
+      <p><strong>Integrated Pest Management:</strong> Maintain orchard sanitation, use biological controls when possible, and apply chemicals only when necessary.</p>
+
+      <h3>5. Harvesting and Post-Harvest Handling</h3>
+      <p><strong>Harvesting:</strong> Harvest when fruits are mature but still firm. For Alphonso, look for slight yellow coloration at the stem end.</p>
+      <p><strong>Harvesting Method:</strong> Use a mango harvester with a net bag to prevent fruit damage. Cut with 4-5 cm stalk attached.</p>
+      <p><strong>Grading:</strong> Sort fruits based on size, color, and quality.</p>
+      <p><strong>Packaging:</strong> Pack in single layer in corrugated fiber boxes with proper ventilation.</p>
+      <p><strong>Storage:</strong> Store at 12-13°C with 85-90% relative humidity for up to 3 weeks.</p>
+      <p><strong>Ripening:</strong> For commercial ripening, use ethylene (100 ppm) in ripening chambers at 20-22°C.</p>
+
+      <h3>6. Organic Mango Cultivation</h3>
+      <p><strong>Soil Management:</strong> Apply compost, vermicompost, and green manures to improve soil health.</p>
+      <p><strong>Nutrient Management:</strong> Use organic inputs like farmyard manure (50 kg/tree), neem cake (5 kg/tree), and vermicompost (20 kg/tree).</p>
+      <p><strong>Pest Management:</strong></p>
+      <ul>
+        <li>Neem oil (2%) for controlling hoppers and mealy bugs.</li>
+        <li>Trichoderma viride for controlling soil-borne diseases.</li>
+        <li>Beauveria bassiana for fruit fly control.</li>
+      </ul>
+      <p><strong>Certification:</strong> Contact accredited certification agencies for organic certification, which typically requires a 3-year conversion period.</p>
+      <p><strong>Market Premium:</strong> Organic mangoes can fetch 20-30% higher prices in domestic and export markets.</p>
+    </div>
+    <p>Learn more at <a href="https://www.agrifarming.in/mango-farming" target="_blank">Agrifarming</a>.</p>
+  </div>
+</section>
+
+
+  <section id="leaf-detection">
+    <div class="container">
+      <h2>Mango Leaf Detection</h2>
+      <p>Upload a leaf image to detect diseases.</p>
+      <form id="leafForm" enctype="multipart/form-data">
+        <input type="file" id="leafImage" accept="image/*" required>
+        <button type="submit" class="btn">Analyze Leaf</button>
+      </form>
+      <div id="leafResult"></div>
+      <p><em>Preliminary tool. Consult experts for confirmation.</em></p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>The Maharashtra Mango Cultivators Platform is dedicated to empowering mango farmers across Maharashtra with cutting-edge technology and AI-driven solutions. Our mission is to increase productivity, reduce crop losses, and improve the livelihoods of mango farmers through accessible digital tools.</p>
+      
+      <p>By combining artificial intelligence, weather forecasting, and agricultural expertise, we aim to revolutionize mango farming practices and create a sustainable future for mango cultivation in the region.</p>
+  
+      <h3>Our Technology</h3>
+      <p>At the heart of our platform is a sophisticated AI model trained to identify various mango leaf diseases with high accuracy. Using MobileNetV2 architecture, our system can detect 8 different conditions including Anthracnose, Bacterial Canker, Cutting Weevil, Die Back, Gall Midge, Powdery Mildew, and more.</p>
+      
+      <p>Our weather forecasting system provides localized predictions specifically tailored for mango orchards, helping farmers make informed decisions about irrigation, pest control, and harvest timing.</p>
+  
+      <h3>About the Developer</h3>
+      <p>This platform was developed by Anish Chavan, a 9th standard student with a passion for both farming and technology. Anish created this project to bridge the gap between traditional farming practices and modern technological solutions.</p>
+  
+      <p>Despite his young age, Annish recognized the challenges faced by mango farmers in Maharashtra and was inspired to create a tool that could make a real difference in their lives.</p>
+  
+      <p>Contact us: <a href="mailto:info@mangohub.com">info@mangohub.com</a> | Follow us: 
+        <a href="https://facebook.com/mangohub" target="_blank">Facebook</a> | 
+        <a href="https://twitter.com/mangohub" target="_blank">Twitter</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Mango Cultivators Hub. All Rights Reserved.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
